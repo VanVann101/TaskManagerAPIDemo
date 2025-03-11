@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 4022:1433
+    volumes:
+      - ./sqlserver:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=gklJ0NAuJk4Ee6g
+  
+networks:
+  app-network:
+    driver: bridge
+  
